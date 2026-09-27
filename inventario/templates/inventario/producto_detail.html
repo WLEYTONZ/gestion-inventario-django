@@ -1,0 +1,19 @@
+{% extends "inventario/base.html" %}
+{% block title %}{{ producto.nombre }} | Gestión de inventario{% endblock %}
+{% block content %}
+<a class="text-decoration-none small" href="{% url 'inventario:producto_lista' %}">← Volver a productos</a>
+<div class="d-flex flex-column flex-sm-row justify-content-between align-items-sm-center gap-3 my-4">
+  <div><p class="eyebrow mb-2">Detalle del producto</p><h1 class="h2 mb-0 text-break">{{ producto.nombre }}</h1></div>
+  <div class="d-flex gap-2"><a class="btn btn-primary" href="{% url 'inventario:producto_editar' producto.pk %}">Editar producto</a><a class="btn btn-outline-danger" href="{% url 'inventario:producto_eliminar' producto.pk %}">Eliminar</a></div>
+</div>
+<div class="card p-3 p-md-4">
+  <dl class="row gy-4 mb-0">
+    <div class="col-12 col-sm-6 col-lg-3"><dt class="small text-secondary mb-2">Código</dt><dd class="font-monospace mb-0">{{ producto.codigo }}</dd></div>
+    <div class="col-12 col-sm-6 col-lg-3"><dt class="small text-secondary mb-2">Categoría</dt><dd class="mb-0">{{ producto.categoria }}</dd></div>
+    <div class="col-12 col-sm-6 col-lg-3"><dt class="small text-secondary mb-2">Precio</dt><dd class="fs-4 fw-semibold mb-0">${{ producto.precio }}</dd></div>
+    <div class="col-12 col-sm-6 col-lg-3"><dt class="small text-secondary mb-2">Stock disponible</dt><dd class="fs-4 fw-semibold mb-0">{{ producto.stock }} <span class="text-secondary fs-6 fw-normal">unidades</span></dd></div>
+    <div class="col-12 border-top pt-4"><dt class="mb-2">Descripción</dt><dd class="text-secondary detail-copy mb-0">{{ producto.descripcion|default:"Sin descripción registrada." }}</dd></div>
+    <div class="col-12"><dt class="small text-secondary">Fecha de registro</dt><dd class="small mb-0">{{ producto.fecha_creacion|date:"d/m/Y H:i" }}</dd></div>
+  </dl>
+</div>
+{% endblock %}

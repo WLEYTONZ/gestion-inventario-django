@@ -15,6 +15,7 @@ class Categoria(models.Model):
 class Producto(models.Model):
     codigo = models.CharField(max_length=20, unique=True, verbose_name="Código del Producto")
     nombre = models.CharField(max_length=150, verbose_name="Nombre del Producto")
+    descripcion = models.TextField(verbose_name="Descripción")
     categoria = models.ForeignKey(Categoria, on_delete=models.CASCADE, related_name="productos", verbose_name="Categoría")
     precio = models.DecimalField(max_digits=10, decimal_places=2, validators=[MinValueValidator(0.01)], verbose_name="Precio ($)")
     stock = models.IntegerField(validators=[MinValueValidator(0)], verbose_name="Cantidad en Stock")

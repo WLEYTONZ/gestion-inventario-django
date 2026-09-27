@@ -1,0 +1,15 @@
+{% extends "inventario/base.html" %}
+{% block title %}Eliminar producto | Gestión de inventario{% endblock %}
+{% block content %}
+<div class="card confirm-shell p-4 p-md-5">
+  <div class="warning-mark mb-4" aria-hidden="true">!</div>
+  <h1 class="h3 mb-3">¿Eliminar este producto?</h1>
+  <p class="text-secondary">El producto se retirará definitivamente del inventario. Esta acción no se puede deshacer.</p>
+  <div class="bg-light border rounded-3 p-3 my-3"><strong class="d-block text-break">{{ producto.nombre }}</strong><span class="small text-secondary font-monospace">{{ producto.codigo }}</span></div>
+  <form method="post" class="d-flex flex-wrap gap-2 mt-3">
+    {% csrf_token %}
+    <button class="btn btn-danger" type="submit">Sí, eliminar producto</button>
+    <a class="btn btn-outline-secondary" href="{% url 'inventario:producto_detalle' producto.pk %}">Cancelar</a>
+  </form>
+</div>
+{% endblock %}

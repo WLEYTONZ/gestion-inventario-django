@@ -1,0 +1,23 @@
+:root { --bs-body-bg: #f4f6fa; --bs-body-color: #243248; }
+body { min-height: 100vh; }
+.site-header { background: #fff; border-bottom: 1px solid #e3e8f0; }
+.brand { display: inline-flex; align-items: center; gap: 14px; color: #16253e; text-decoration: none; font-weight: 700; }
+.brand-mark { display: grid; place-items: center; width: 42px; height: 42px; background: #2454d6; color: #fff; border-radius: 12px; font-size: .9rem; }
+h1 { font-weight: 750; letter-spacing: -.035em; }
+.eyebrow { color: #526078; font-size: .75rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+.card { border: 1px solid #e3e8f0; border-radius: 16px; box-shadow: 0 4px 18px rgb(23 43 77 / 3%); background: white; }
+.btn { border-radius: 8px; font-weight: 600; }
+.btn-primary { --bs-btn-bg: #2454d6; --bs-btn-border-color: #2454d6; }
+.form-control, .form-select { background-color: #fff; border-color: #cbd3df; padding: .7rem .85rem; border-radius: 8px; }
+.form-label { font-weight: 600; font-size: .9rem; }
+.table { --bs-table-bg: white; --bs-table-hover-bg: #f7f9ff; }
+.table thead th { background: #f8fafc; color: #59677c; font-size: .75rem; text-transform: uppercase; letter-spacing: .055em; padding: 1rem; white-space: nowrap; }
+.table td { padding: 1rem; }
+.product-name { color: #243248; text-decoration: none; font-weight: 650; overflow-wrap: anywhere; }
+.product-name:hover { color: #2454d6; text-decoration: underline; }
+.product-description { max-width: 320px; overflow-wrap: anywhere; }
+.empty-state { padding: 4rem 1.5rem; text-align: center; }
+.detail-copy { white-space: pre-wrap; overflow-wrap: anywhere; }
+.form-shell { max-width: 860px; margin-inline: auto; }
+.confirm-shell { max-width: 620px; margin: 2rem auto; }
+.warning-mark { display: grid; place-items: center; width: 54px; height: 54px; border-radius: 16px; background: #fff0f0; color: #b42332; font-size: 1.7rem; font-weight: 700; }
